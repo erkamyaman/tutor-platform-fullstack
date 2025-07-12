@@ -1,0 +1,59 @@
+.sidebar-container {
+  height: 100vh;
+  width: 15rem;
+  background: var(--surface-overlay);
+  border-right: 2px solid var(--primary-color);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 2px solid var(--primary-color);
+}
+
+// Active route styling
+.active-route {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  
+  i {
+    color: white !important;
+  }
+}
+
+:host {
+  display: block;
+  margin-left: 15rem;
+}
+
+@media (max-width: 768px) {
+  .sidebar-container {
+    display: none;
+  }
+}

@@ -1,0 +1,59 @@
+<div class="flex align-items-center justify-content-between mb-4">
+    <h1 class="text-2xl font-bold">Students</h1>
+    <p-button label="Add Student" icon="pi pi-plus" (onClick)="addStudent()" />
+</div>
+<p-table 
+    #dt2
+    class="mt-4"
+    [value]="students"
+    showGridlines
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [paginator]="true"
+    [rows]="10"
+    [totalRecords]="students.length"
+    [rowsPerPageOptions]="[10, 20, 50, 100]"
+    [globalFilterFields]="['name', 'surname', 'email', 'phone', 'country', 'city', 'nationality', 'status']"
+    [first]="0"
+    >
+
+    <ng-template #caption>
+        <div class="flex">
+            <p-iconfield iconPosition="left" class="ml-auto">
+                <p-inputicon>
+                    <i class="pi pi-search"></i>
+                </p-inputicon>
+                <input pInputText type="text" #searchInput (input)="dt2.filterGlobal(searchInput.value, 'contains')" placeholder="Search student" />
+            </p-iconfield>
+        </div>
+    </ng-template>
+    <ng-template #header>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>  
+            <th>Phone</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Nationality</th>
+            <th>Status</th>
+        </tr>
+    </ng-template>
+    <ng-template #body let-student>
+        <tr>
+            <td class="cursor-pointer" routerLink="/students/{{ student.id }}">{{ student.name }}</td>
+            <td>{{ student.surname }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.phone }}</td>
+            <td>{{ student.country }}</td>
+            <td>{{ student.city }}</td>
+            <td>{{ student.nationality }}</td>
+            <td>{{ student.status }}</td>
+        </tr>
+    </ng-template>
+
+    <ng-template #emptyMessage> 
+        <tr>
+            <td colspan="6">No students found.</td>
+        </tr>
+    </ng-template>
+</p-table>
