@@ -9,6 +9,10 @@ import { Packages } from './pages/students/student-details/packages/packages';
 import { Feedback } from './pages/students/student-details/feedback/feedback';
 import { Payment } from './pages/students/student-details/payment/payment';
 import { Info } from './pages/students/student-details/info/info';
+import { Dashboard } from './pages/dashboard/dashboard';
+import { Lessons } from './pages/lessons/lessons';
+import { Calendar } from './pages/calendar/calendar';
+import { Settings } from './pages/settings/settings';
 
 export const routes: Routes = [
     {
@@ -16,11 +20,15 @@ export const routes: Routes = [
         component: MainLayout,
         children: [
             {
+                path: 'dashboard',
+                component: Dashboard,
+            },
+            {
                 path: 'students',
                 component: Students,
             },
             {
-                path: 'student-details/:id',
+                path: 'students/:id',
                 component: StudentDetails,
                 children: [
                     { path: '', redirectTo: 'info', pathMatch: 'full' },
@@ -53,6 +61,22 @@ export const routes: Routes = [
                         component: Payment
                     }
                 ]
+            },
+            {
+                path: 'lessons',
+                component: Lessons,
+            },
+            {
+                path: 'calendar',
+                component: Calendar,
+            },
+            {
+                path: 'feedback',
+                component: Feedback,
+            },
+            {
+                path: 'settings',
+                component: Settings,
             },
         ],
     },

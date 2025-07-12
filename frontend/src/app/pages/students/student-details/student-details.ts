@@ -45,7 +45,7 @@ export class StudentDetails implements OnInit {
     }
 
     this.chosenMenuOption = option.value;
-    this.router.navigate(['student-details', this.id, option.route]);
+    this.router.navigate(['students', this.id, option.route]);
   }
 
   chooseOperation(opt: 'del' | 'ban') {

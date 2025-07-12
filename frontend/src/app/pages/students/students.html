@@ -40,7 +40,7 @@
     </ng-template>
     <ng-template #body let-student>
         <tr>
-            <td class="cursor-pointer" routerLink="/student-details/{{ student.id }}">{{ student.name }}</td>
+            <td class="cursor-pointer" routerLink="/students/{{ student.id }}">{{ student.name }}</td>
             <td>{{ student.surname }}</td>
             <td>{{ student.email }}</td>
             <td>{{ student.phone }}</td>
@@ -56,4 +56,6 @@
             <td colspan="6">No students found.</td>
         </tr>
     </ng-template>
+    <router-outlet></router-outlet>
 </p-table>
+

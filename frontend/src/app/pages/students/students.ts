@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { IconFieldModule } from 'primeng/iconfield';
@@ -11,7 +11,7 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'app-students',
-  imports: [TableModule, CommonModule, RouterLink, ButtonModule, InputTextModule, IconFieldModule, InputIconModule, InputTextModule],
+  imports: [TableModule, CommonModule, RouterLink, ButtonModule, InputTextModule, IconFieldModule, InputIconModule, InputTextModule, RouterOutlet],
   providers: [DialogService],
   templateUrl: './students.html',
   styleUrl: './students.scss'
