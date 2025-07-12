@@ -40,9 +40,10 @@ export enum MenuOption {
     Packages = 5,
     Feedback = 6,
     Payments = 7,
+    Operations = 8
 }
 
-export const MenuOptionsLookUp: Array<{ label: string; icon: string; value: MenuOption, route: string }> = [
+export const MenuOptionsLookUp: Array<{ label: string; icon: string; value: MenuOption, route?: string }> = [
     { label: 'Info', icon: 'pi pi-info-circle', value: MenuOption.Info, route: 'info' },
     { label: 'Notes', icon: 'pi pi-file-edit', value: MenuOption.Notes, route: 'notes' },
     { label: 'Contact', icon: 'pi pi-phone', value: MenuOption.Contact, route: 'contact' },
@@ -50,4 +51,6 @@ export const MenuOptionsLookUp: Array<{ label: string; icon: string; value: Menu
     { label: 'Packages', icon: 'pi pi-box', value: MenuOption.Packages, route: 'packages' },
     { label: 'Feedback', icon: 'pi pi-comment', value: MenuOption.Feedback, route: 'feedback' },
     { label: 'Payments', icon: 'pi pi-credit-card', value: MenuOption.Payments, route: 'payments' },
+    { label: 'Operations', icon: 'pi pi-cog', value: MenuOption.Operations },
+
 ];

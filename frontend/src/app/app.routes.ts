@@ -23,6 +23,7 @@ export const routes: Routes = [
                 path: 'student-details/:id',
                 component: StudentDetails,
                 children: [
+                    { path: '', redirectTo: 'info', pathMatch: 'full' },
                     {
                         path: 'info',
                         component: Info
