@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MenuOption, MenuOptionsLookUp } from '../student-models';
 import { ButtonModule } from 'primeng/button';
@@ -14,7 +14,7 @@ import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
   styleUrl: './student-details.scss'
 })
 
-export class StudentDetails {
+export class StudentDetails implements OnInit {
   @ViewChild('op') op!: Popover;
 
   router = inject(Router)
@@ -23,14 +23,21 @@ export class StudentDetails {
   menuOptions = MenuOptionsLookUp;
   chosenMenuOption = MenuOption.Info
 
+
+  ngOnInit(): void {
+    this.router.navigate(['student-details', this.id, 'info']);
+  }
+
+
   toggle(event: any) {
     this.op.toggle(event);
   }
 
   redirectTo(option: any) {
     this.chosenMenuOption = option.value;
-    this.router.navigate(['student-details', this.id, option.route]);
     this.op.hide();
+
+    this.router.navigate(['student-details', this.id, option.route]);
   }
 
   getLabel() {

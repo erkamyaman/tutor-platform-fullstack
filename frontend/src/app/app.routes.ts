@@ -8,6 +8,7 @@ import { Homework } from './pages/students/student-details/homework/homework';
 import { Packages } from './pages/students/student-details/packages/packages';
 import { Feedback } from './pages/students/student-details/feedback/feedback';
 import { Payment } from './pages/students/student-details/payment/payment';
+import { Info } from './pages/students/student-details/info/info';
 
 export const routes: Routes = [
     {
@@ -22,6 +23,10 @@ export const routes: Routes = [
                 path: 'student-details/:id',
                 component: StudentDetails,
                 children: [
+                    {
+                        path: 'info',
+                        component: Info
+                    },
                     {
                         path: 'notes',
                         component: Notes
