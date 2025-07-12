@@ -37,7 +37,6 @@ export class StudentDetails implements OnInit {
   }
 
   redirectTo(option: any) {
-    this.chosenMenuOption = option.value;
     this.op.hide();
 
     if (option.label === 'Operations') {
@@ -45,6 +44,7 @@ export class StudentDetails implements OnInit {
       return
     }
 
+    this.chosenMenuOption = option.value;
     this.router.navigate(['student-details', this.id, option.route]);
   }
 
